@@ -1,1 +1,47 @@
+ public static void merge(int[] arr1,int[] arr2)
+    {
+        int a=arr1.length;
+        int b=arr2.length;
+        
+        int c=Math.max(a,b);
+        int d=Math.min(a,b);
+        
+        
+        for(int x=0;x<c;x++)
+        {
+            for(int y=0;y<d;y++)
+            {
+            if(arr1[x]>arr2[y])
+            {
+                int temp=arr2[y];  // swap
+                arr2[y] = arr1[x];
+                arr1[x] = temp;
+            }
+            }
+            
+        }
+        
+        // then last mei chota vala sort kar do.
+        if(c==a)  // this will tell konsa vala array chita vala array hai.
+        {
+            Arrays.sort(arr1);
+            
+        }
+        else
+        {
+            Arrays.sort(arr2);
 
+            
+        }
+        
+        
+        // for printing arrays
+        for(int i=0;i<a;i++)
+        {
+        System.out.print(arr1[i]+" ");
+        }
+        for(int j=0;j<b;j++)
+        {
+        System.out.print(arr2[j]+" ");
+        }
+    }
