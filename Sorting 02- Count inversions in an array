@@ -1,0 +1,33 @@
+without merge sort-
+
+public static int count(int[] arr)
+    {
+        int l=arr.length;
+        int count=0;
+        
+        for(int i=0;i<l;i++)
+        {
+            for(int j=i+1;j<l;j++)// inversion ki second condition already satisfied kar di hai maine
+            {
+                
+                if(isInversion(arr[i],arr[j])) 
+                {
+                    count++;
+                }
+            }
+        }
+        
+        return count;// this is my answer
+    }
+    
+    public static boolean isInversion(int a, int b)
+    {
+        if(a>b) // only finding first condition as second condition is already satisfid , tabhi yaha aye hai
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
