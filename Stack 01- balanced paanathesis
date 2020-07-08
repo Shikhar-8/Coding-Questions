@@ -1,1 +1,58 @@
 
+public String isbalanced(String s1)
+    {
+        Stack<Character> s =new Stack<Character>();
+        char ch[]=s1.toCharArray();
+        int l =s1.length();
+
+        for(int i=0;i<l;)
+        {
+                if(ch[i]=='{' || ch[i]=='[' ||ch[i]=='(')
+                    {
+                        s.push(ch[i]);
+                        i++;    
+                    }
+                 
+                else if(s.empty())
+                {
+                    return "NO";
+                }
+
+                else if(ch[i]=='}' || ch[i]==']' || ch[i]==')')
+                    {
+                        if(ch[i]==')' && s.pop()=='(')
+                        {
+                            i++;
+                        }
+                        else if(ch[i]=='}' && s.pop()=='{')
+                        {
+                            i++;
+                        }
+
+                        else if(ch[i]==']' && s.pop()=='[')
+                        {
+                            i++;
+                        }
+
+                        else 
+                        {
+                            return "NO";
+                        }
+       }            }   
+
+
+        //now if somthing is left in stack means Starting vala bacha hai
+            if(s.empty())//means stack khali hai
+            
+                return "YES";
+            
+            else 
+            
+                return "NO";
+            
+
+            
+
+        
+
+    }
