@@ -1,0 +1,103 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    static int count=0;
+    
+    public static pushstack(int[][] arr, int x, int y)
+    {
+        Stack<> st= new Stack<>();
+        for(int m=0;m<x;m++)
+        {
+            for(int n=0;n<y;n++)
+            {
+                if(arr[m][n]==2)
+                {
+                    st.push(m,n);
+                }
+            }
+        }
+        
+        while((!st.isEmpty()))
+        {
+            int pair = st.pop();
+            //replace all with 2;
+            (arr[i-1][j]==0 && i>0)
+            
+        }
+        calculatetime(arr,x,y);
+        
+        
+    }
+    
+    public static int checkone(int[][] arr, int x, int y)
+    {
+        for(int i=0;i<x;i++)
+        {
+            for(int j=0;j<y;j++)
+            {
+              if(arr[i][j]==1)
+              {
+                  if((arr[i-1][j]==0 && i>0) && (arr[i+1][j]==0 && i<y) && (arr[i][j-1]==0 && j>0) && (arr[i][j+1]==0 && j<x)) 
+                  {
+                      return -1;
+                  }
+              }
+            }
+        }
+        int result =calculatetime(arr,x,y);
+        return result;
+        
+    }
+    public static int calculatetime(int[][] arr, int x, int y)
+    {
+        
+        
+        for(int k=0;k<x;k++)
+        {
+            for(int l=0;l<y;l++)
+            {
+                if(arr[k][l] == 0 || arr[k][l] == 2)
+                {
+                    return count;
+                }
+                else
+                {
+                    count++;
+                    pushstack(arr,x,y);
+                }
+            }
+        }
+        
+        return count;
+    }
+    
+    
+	public static void main (String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    
+	    int a= sc.nextInt();
+	    for(int i=0;i<a;i++)
+	    {
+	        int x=sc.nextInt();
+	        int y=sc.nextInt();
+	        int[][] arr = new int[x][y];
+	        for(int j=0;j<x;j++)
+	        {
+	            for(int k=0;k<y;k++)
+	            {
+	                arr[j][k]=sc.nextInt();
+	            }
+	            
+	        }
+	        
+	       int result= checkone(arr,x,y);
+	       System.out.println(result);
+	    }
+
+
+	}
+}
