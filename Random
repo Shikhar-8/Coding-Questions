@@ -1,59 +1,25 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
-class GFG {
-    public static void sort(int[] array)
-    {
-        PriorityQueue<Integer> minheap=new PriorityQueue<Integer>();
-            for(int i=0;i<array.length;i++)
-            {
-                minheap.add(array[i]);
-            }
-            
-            int[] brr = new int[array.length];
-            
-            //int m=0;
-            // for(int j=k+1;j<array.length;j++)
-            // {
-            //     brr[m]=minheap.poll();
-            //     m=m+1;
-            //     minheap.add(array[j]);
-                
-            // }
-            
-            // Iterator<Integer> itr = minheap.iterator();
-            // while(itr.hasNext())
-            // {
-            //     brr[m]=minheap.poll();
-            //     m=m+1;
-            // }
-            
-        
-        
-        
-        for(int l=0;l<array.length;l++)
+Collections.sort(array, new Comparator<int[]>()
         {
-            brr[l]=minheap.poll();
-            System.out.print(brr[l]+" ");
-        }
-    }
-	public static void main (String[] args)
-	{
-	   Scanner sc=new Scanner(System.in);
-	   int a=sc.nextInt();
-	   for(int i=0;i<a;i++)
-	   {
-	       int b=sc.nextInt();
-	       //int c=sc.nextInt();
-	       int[] arr=new int[b];
-	       for(int j=0;j<b;j++)
-	       {
-	         arr[j]=sc.nextInt();    
-	       }
-	       
-	       sort(arr);
-	   }
-	    
-	}
-}
+            public int compare(int[] ob1,int[] ob2)
+          if(ob1[0]>ob2[0])
+          {
+              return 1;
+          }
+          else
+          {
+              return -1;
+          }
+            });
+        
+        PriorityQueue<Integer> minheap = new PriorityQueue<Integer>(array,new Comparator<int[]>()
+        public int compare(int[] ob1,int[] ob2)
+        {
+            if(ob1[1]>ob11[1])
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        });
