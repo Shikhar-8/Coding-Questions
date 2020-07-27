@@ -1,0 +1,102 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+class Station{
+    int petrol,dist;
+    public Station(int petrol,int dist )
+    {
+        this.petrol=petrol;
+        this.dist=dist;
+    }
+}
+
+ class Solution {
+    static ArrayList<Station> alist=new ArrayList<Station>();
+    
+   public static void converttooned(int[][] arrays)
+   {
+       for(int i=0;i<arrays.length;i++)
+       {
+           alist.add(new Station(arrays[i][0],arrays[i][1]));
+           cq.add(i);
+       }
+   } 
+   public static int checkstatus(ArrayList<Station> alist, int i)
+   {
+       int netpetrol=0;
+       int extraPetrolLeft=0;
+       int n=alist.size();
+       int count=0;
+       
+       
+        Station current = alist.get(pq.peek());
+
+        while(current.dist>current.petrol )
+       {
+            cq.add(cq.poll());
+            current = alist.get(pq.peek());
+       }
+       
+       while(count<n && netpetrol>0)
+       {    
+        extraPetrolLeft=netpetrol;
+        int currentpetrol=current.petrol-current.dist;
+        netpetrol=currentpetrol + extraPetrolLeft;
+        count++;
+        
+       }
+       if(netpetrol<=0)
+       {
+        
+       }
+       if(count==n)
+       {
+           cq.peek();
+       }
+
+       
+
+
+       return i;
+   }
+
+    static int truckTour(int[][] arrays) {
+        converttooned(arrays);
+        int i=0;
+        int result =checkstatus(alist,i);
+        while( result == -1)
+       {
+           result= checkstatus(alist,i++);
+       }
+
+        return result;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = Integer.parseInt(scanner.nextLine().trim());
+
+        int[][] petrolpumps = new int[n][2];
+
+        for (int petrolpumpsRowItr = 0; petrolpumpsRowItr < n; petrolpumpsRowItr++) {
+            String[] petrolpumpsRowItems = scanner.nextLine().split(" ");
+
+            for (int petrolpumpsColumnItr = 0; petrolpumpsColumnItr < 2; petrolpumpsColumnItr++) {
+                int petrolpumpsItem = Integer.parseInt(petrolpumpsRowItems[petrolpumpsColumnItr].trim());
+                petrolpumps[petrolpumpsRowItr][petrolpumpsColumnItr] = petrolpumpsItem;
+            }
+        }
+
+        int result = truckTour(petrolpumps);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+    }
+}
