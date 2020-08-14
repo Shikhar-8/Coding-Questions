@@ -26,7 +26,7 @@ public class Tree
             {
                 return true;
             }
-            if(curr.data<value)
+            if(curr.data<value.data)
             {
                 return true;
             }
