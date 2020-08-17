@@ -16,7 +16,7 @@ public class Tree
          return true;   
             
         }
-        
+        else
         return false;
         }
         
