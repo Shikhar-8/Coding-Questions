@@ -4,6 +4,7 @@ class Station{
     {
         this.petrol=petrol;
         this.dist=dist;
+        
     }
 }
  
