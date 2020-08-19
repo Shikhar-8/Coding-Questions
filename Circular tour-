@@ -8,6 +8,7 @@ class Station{
     }
 }
  
+
  class Solution {
     static ArrayList<Station> alist=new ArrayList<Station>();
     
