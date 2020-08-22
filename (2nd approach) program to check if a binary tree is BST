@@ -11,7 +11,7 @@ public class Tree
         {
             return true;
         }
-        if((checkleft(root.left,root.data) && checkright(root.right,root.data)) && isBST(root.left) && isBST(root.right))
+        if((checkleft( root.left,root.data) && checkright(root.right,root.data)) && isBST(root.left) && isBST(root.right))
         {
          return true;   
             
