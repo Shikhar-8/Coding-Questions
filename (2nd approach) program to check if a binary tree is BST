@@ -2,6 +2,7 @@
 public class Tree
 {
 
+
        public static int Rootvalue=root.data;
         
        public static boolean isBST(Node root)
