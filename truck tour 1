@@ -1,0 +1,17 @@
+ int tour(int petrol[], int distance[])
+    {
+        int netpetrol=0;
+        int start=0;
+	   int l=petrol.length;
+	   for(int i=0;i<l;i++)
+	   {
+	       netpetrol=netpetrol+petrol[i]-distance[i];
+	       if(netpetrol<0)
+	       {
+	           netpetrol=0;
+	           start=i+1;
+	           
+	       }
+	   }
+	   return start;
+    }
