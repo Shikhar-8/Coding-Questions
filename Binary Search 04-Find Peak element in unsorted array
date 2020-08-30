@@ -6,7 +6,7 @@ class Solution {
         int mid=(l+r)/2;
             if(l==r)
             {
-                return l; // this is for array of length 1 only;eg-a={5}
+                return l; // this is for array of length 1 , meaning araay of single element only;eg-a={5}
             }
         while(l<=r)
         {
